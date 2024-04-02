@@ -1,6 +1,7 @@
-const { query } = require("express");
-const express = require("express");
-const radar = require('flightradar24-client/lib/radar');
+// const express = require("express");
+import {fetchFromRadar} from 'flightradar24-client'
+import express from 'express';
+//const radar = require('flightradar24-client/lib/radar');
 const app = express();
 const port = 6129;
 
@@ -24,10 +25,11 @@ app.get("/getflights", (req, res) => {
 
     
     let fin = {};
-    radar(querySet.north_lat, querySet.west_long, querySet.south_lat, querySet.east_long)
+    fetchFromRadar(querySet.north_lat, querySet.west_long, querySet.south_lat, querySet.east_long)
     .then((flights) => {
 
         flights.forEach(curr => {
+            // Calculate approx. distance in miles
             curr.distanceToCenter = (Math.sqrt( Math.pow((curr.latitude - querySet.center_lat),2) + Math.pow((curr.longitude - querySet.center_long),2)) * 69);
         });
 
@@ -43,7 +45,8 @@ app.get("/getflights", (req, res) => {
 
         res.send(fin);
     })
-    .catch(() => {
+    .catch((e) => {
+        console.log(e);
         fin = {
             success: false
         };
