@@ -1,7 +1,5 @@
-// const express = require("express");
 import {fetchFromRadar} from 'flightradar24-client'
 import express from 'express';
-//const radar = require('flightradar24-client/lib/radar');
 const app = express();
 const port = 6129;
 
@@ -36,7 +34,6 @@ app.get("/getflights", (req, res) => {
 
         flights.sort((a, b) => (a.distanceToCenter > b.distanceToCenter) ? 1 : -1);
         console.log(flights);
-
 
         fin = {
             flights: flights,
