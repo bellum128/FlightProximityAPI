@@ -1,6 +1,6 @@
 FROM node:17
 
-WORKDIR "/opt/FlightDisplayAPI/"
+WORKDIR "/opt/FlightProximityAPI/"
 COPY package*.json ./
 
 RUN npm install
