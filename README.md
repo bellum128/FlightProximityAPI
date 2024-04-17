@@ -51,5 +51,5 @@ The response is a JSON object containing the list of flights sorted by their app
 
 
 ### Related Projects
-[bellum128/TwitchPlaneBot](https:/github.com/bellum128/TwitchPlaneBot)
-[bellum128/RTIRLAPIRelay](https:/github.com/bellum128/RTIRLAPIRelay)
+- [bellum128/TwitchPlaneBot](https://github.com/bellum128/TwitchPlaneBot)
+- [bellum128/RTIRLAPIRelay](https://github.com/bellum128/RTIRLAPIRelay)
