@@ -6,12 +6,24 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint *.js",
+    "lint-fix": "npx eslint *.js --fix"
   },
-  "author": "",
+  "author": "bellum128",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "flightradar24-client": "^1.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.0.2",
+    "@eslint/js": "^9.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "globals": "^15.0.0"
   }
 }
